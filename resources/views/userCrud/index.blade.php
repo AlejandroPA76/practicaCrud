@@ -2,6 +2,7 @@
 
 @section('contenido')
    <a href="/users/create" class="btn btn-primary">agregar</a>
+   <a href="/inventarios" class="btn btn-primary"> more crud</a>
    <br>
    <br>
 <table class="table">
@@ -19,7 +20,14 @@
       <td>{{$use->id}}</td>
       <td>{{$use->name}}</td>
       <td>{{$use->email}}</td>
-      <td><a href="users/{{$use->id}}/edit">editar</a></td>
+      <td><a href="users/{{$use->id}}/edit" class="btn btn-secondary">editar</a></td>
+      <td>
+        <form action="users/{{$use->id}}" method="POST">
+          @csrf
+          @method('delete')
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+      </td>
     </tr>
     
    @endforeach

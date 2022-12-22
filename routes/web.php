@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\InventarioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,5 @@ use App\Http\Controllers\UsersController;
 Route::get('/', [UsersController::class, 'index']);
 
 Route::resource('users',UsersController::class);
+
+Route::resource('inventarios',InventarioController::class);
