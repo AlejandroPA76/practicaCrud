@@ -25,15 +25,15 @@
       <td>{{$inv->num}}</td>
       <td>{{$inv->date}}</td>
       <td>
-        <a href="inventarios/{{$inv->id}}/edit">editar</a>
+        <a class="btn btn-warning" href="inventarios/{{$inv->id}}/edit">editar</a>
       </td>
 
       <td>
-        
-        <form action="inventarios/{{$inv->id}}" method="POST" >
+        <a href="javascript: document.getElementById('delete').submit()" class="btn btn-danger btn-sm" onclick="return confirm('deseas borrar?')">Eliminar</a>
+
+        <form id=delete action="inventarios/{{$inv->id}}" method="POST" >
           @csrf
           @method('delete')
-          <button type="submit">eliminar</button>
 
         </form>
       </td>

@@ -22,11 +22,16 @@
       <td>{{$use->email}}</td>
       <td><a href="users/{{$use->id}}/edit" class="btn btn-secondary">editar</a></td>
       <td>
-        <form action="users/{{$use->id}}" method="POST">
+        <a href="javascript: document.getElementById('delete').submit()" class="btn btn-danger btn-sm" onclick="return confirm('deseas borrar?')">Eliminar</a>
+
+        <form id=delete action="users/{{$use->id}}" method="POST">
           @csrf
           @method('delete')
-          <button type="submit" class="btn btn-danger">Eliminar</button>
+         
         </form>
+
+
+         
       </td>
     </tr>
     

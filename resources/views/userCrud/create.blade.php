@@ -24,7 +24,7 @@
      
 
     <button type="submit" class="btn btn-primary">Agregar</button>
-    <a href="usuario" class="btn btn-info">salir</a>
+    <a href="/users" class="btn btn-info">salir</a>
 
 </form>
 @endsection
